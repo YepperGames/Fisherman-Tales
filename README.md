@@ -1,1 +1,3 @@
-# fishermantales
+# Fisherman Tales
+
+> Configurando o jogo!
