@@ -34,11 +34,17 @@
     "IDEVersion": "2023.4.0.84",
   },
   "resources": [
-    {"id":{"name":"Sprite1","path":"sprites/Sprite1/Sprite1.yy",},},
-    {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"spr_player_parado","path":"sprites/spr_player_parado/spr_player_parado.yy",},},
+    {"id":{"name":"spr_player_correndo_direita","path":"sprites/spr_player_correndo_direita/spr_player_correndo_direita.yy",},},
+    {"id":{"name":"sprite_player_correndo_baixo","path":"sprites/sprite_player_correndo_baixo/sprite_player_correndo_baixo.yy",},},
+    {"id":{"name":"spr_player_correndo_cima","path":"sprites/spr_player_correndo_cima/spr_player_correndo_cima.yy",},},
+    {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
+    {"id":{"name":"spr_player_correndo_esquerda","path":"sprites/spr_player_correndo_esquerda/spr_player_correndo_esquerda.yy",},},
+    {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
+    {"id":{"name":"Ambiente1","path":"rooms/Ambiente1/Ambiente1.yy",},},
   ],
   "RoomOrderNodes": [
-    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"roomId":{"name":"Ambiente1","path":"rooms/Ambiente1/Ambiente1.yy",},},
   ],
   "TextureGroups": [
     {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"targets":-1,},

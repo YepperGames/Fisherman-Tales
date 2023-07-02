@@ -17,6 +17,10 @@
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings": [
-    {"name":"Sprite1","order":16,"path":"sprites/Sprite1/Sprite1.yy",},
+    {"name":"spr_player_parado","order":5,"path":"sprites/spr_player_parado/spr_player_parado.yy",},
+    {"name":"spr_player_correndo_direita","order":3,"path":"sprites/spr_player_correndo_direita/spr_player_correndo_direita.yy",},
+    {"name":"sprite_player_correndo_baixo","order":1,"path":"sprites/sprite_player_correndo_baixo/sprite_player_correndo_baixo.yy",},
+    {"name":"spr_player_correndo_cima","order":4,"path":"sprites/spr_player_correndo_cima/spr_player_correndo_cima.yy",},
+    {"name":"spr_player_correndo_esquerda","order":2,"path":"sprites/spr_player_correndo_esquerda/spr_player_correndo_esquerda.yy",},
   ],
 }
