@@ -23,6 +23,7 @@
     {"name":"obj_player3","order":3,"path":"objects/obj_player3/obj_player3.yy",},
     {"name":"spr_player_parado_esquerda","order":10,"path":"sprites/spr_player_parado_esquerda/spr_player_parado_esquerda.yy",},
     {"name":"spr_player_correndo_direita","order":3,"path":"sprites/spr_player_correndo_direita/spr_player_correndo_direita.yy",},
+    {"name":"obj_cam","order":4,"path":"objects/obj_cam/obj_cam.yy",},
     {"name":"spr_wall","order":7,"path":"sprites/spr_wall/spr_wall.yy",},
     {"name":"obj_wall","order":2,"path":"objects/obj_wall/obj_wall.yy",},
     {"name":"obj_game","order":1,"path":"objects/obj_game/obj_game.yy",},
