@@ -7,8 +7,15 @@ var _right = keyboard_check(vk_right) or keyboard_check(ord("D"));
 var _run_key_pressed = keyboard_check(vk_shift);
 
 // liga a variável de correr
-if _run_key_pressed{
-	running = !running;
+//if _run_key_pressed{
+//	running = !running;
+//}
+
+// liga a variável de correr
+if keyboard_check_pressed(vk_shift) {
+    running = true;
+} else if (keyboard_check_released(vk_shift)) {
+    running = false;
 }
 
 // coloca a velocidade de movimento a velocidade de correr
@@ -26,7 +33,7 @@ var _yinput = _down - _up;
 move_and_collide(_xinput * my_speed, _yinput * my_speed, obj_wall)
 
 
-//trocar sprite do boneco
+//trocar sprite do boneco andando
 if keyboard_check(vk_up) or keyboard_check(ord("W"))
 {
 	sprite_index=spr_player_correndo_cima;
@@ -42,8 +49,21 @@ else if keyboard_check(vk_right) or keyboard_check(ord("D"))
 else if keyboard_check(vk_down) or keyboard_check(ord("S"))
 {
 	sprite_index=spr_player_correndo_baixo;
-} else {
-	sprite_index=spr_player	
 }
-
-
+// player parado
+else if keyboard_check_released(vk_up) or keyboard_check_released(ord("W"))
+{
+	sprite_index=spr_player_parado;
+}
+else if keyboard_check_released(vk_down) or keyboard_check_released(ord("S"))
+{
+	sprite_index=spr_player;
+}
+else if keyboard_check_released(vk_right) or keyboard_check_released(ord("D"))
+{
+	sprite_index=spr_player_parado_direita;
+}
+else if keyboard_check_released(vk_left) or keyboard_check_released(ord("A"))
+{
+	sprite_index=spr_player_parado_esquerda;
+}

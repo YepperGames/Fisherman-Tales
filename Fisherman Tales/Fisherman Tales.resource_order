@@ -21,6 +21,7 @@
     {"name":"spr_wall_corner","order":8,"path":"sprites/spr_wall_corner/spr_wall_corner.yy",},
     {"name":"spr_player_parado","order":5,"path":"sprites/spr_player_parado/spr_player_parado.yy",},
     {"name":"obj_player3","order":3,"path":"objects/obj_player3/obj_player3.yy",},
+    {"name":"spr_player_parado_esquerda","order":10,"path":"sprites/spr_player_parado_esquerda/spr_player_parado_esquerda.yy",},
     {"name":"spr_player_correndo_direita","order":3,"path":"sprites/spr_player_correndo_direita/spr_player_correndo_direita.yy",},
     {"name":"spr_wall","order":7,"path":"sprites/spr_wall/spr_wall.yy",},
     {"name":"obj_wall","order":2,"path":"objects/obj_wall/obj_wall.yy",},
@@ -28,5 +29,6 @@
     {"name":"spr_player_correndo_baixo","order":1,"path":"sprites/spr_player_correndo_baixo/spr_player_correndo_baixo.yy",},
     {"name":"spr_player_correndo_cima","order":4,"path":"sprites/spr_player_correndo_cima/spr_player_correndo_cima.yy",},
     {"name":"spr_player_correndo_esquerda","order":2,"path":"sprites/spr_player_correndo_esquerda/spr_player_correndo_esquerda.yy",},
+    {"name":"spr_player_parado_direita","order":9,"path":"sprites/spr_player_parado_direita/spr_player_parado_direita.yy",},
   ],
 }
