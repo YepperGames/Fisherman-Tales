@@ -10,5 +10,3 @@ h_half = camera_get_view_height(cam) / 2;
 targetX = xstart;
 targetY = ystart;
 spd = 20;
-
-window_set_fullscreen(true);

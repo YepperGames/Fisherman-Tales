@@ -31,39 +31,35 @@ var _yinput = _down - _up;
 
 // se move para o angulo x e y de acordo com a velocidade, colide com um objeto
 move_and_collide(_xinput * my_speed, _yinput * my_speed, obj_wall)
+//move_and_collide(_xinput * my_speed, _yinput * my_speed, obj_wall_inv)
 
+// Trocar sprite do boneco andando ou correndo ou parado
+if _xinput != 0 or _yinput != 0 {
+    // Movendo em alguma direção
+    if _yinput < 0 {
+        sprite_index = running ? spr_player_char_running_up : spr_player_char_walking_up;
+    } else if _yinput > 0 {
+        sprite_index = running ? spr_player_char_running_down : spr_player_char_walking_down;
+    } else if _xinput < 0 {
+        sprite_index = running ? spr_player_char_running_left : spr_player_char_walking_left;
+    } else if _xinput > 0 {
+        sprite_index = running ? spr_player_char_running_right : spr_player_char_walking_right;
+    }
+} else {
+    // Personagem parado
+    if sprite_index == spr_player_char_running_up or
+       sprite_index == spr_player_char_walking_up {
+        sprite_index = spr_player_char_standing_up;
+    } else if sprite_index == spr_player_char_running_down or
+              sprite_index == spr_player_char_walking_down {
+        sprite_index = spr_player;
+    } else if sprite_index == spr_player_char_running_left or
+              sprite_index == spr_player_char_walking_left {
+        sprite_index = spr_player_char_standing_left;
+    } else if sprite_index == spr_player_char_running_right or
+              sprite_index == spr_player_char_walking_right {
+        sprite_index = spr_player_char_standing_right;
+    }
+}
 
-//trocar sprite do boneco andando
-if keyboard_check(vk_up) or keyboard_check(ord("W"))
-{
-	sprite_index=spr_player_char_walking_up;
-}
-else if keyboard_check(vk_left) or keyboard_check(ord("A"))
-{
-	sprite_index=spr_player_char_walking_left;
-}
-else if keyboard_check(vk_right) or keyboard_check(ord("D"))
-{
-	sprite_index=spr_player_char_walking_right;
-}
-else if keyboard_check(vk_down) or keyboard_check(ord("S"))
-{
-	sprite_index=spr_player_char_walking_down;
-}
-// player parado
-else if keyboard_check_released(vk_up) or keyboard_check_released(ord("W"))
-{
-	sprite_index=spr_player_char_standing_up;
-}
-else if keyboard_check_released(vk_down) or keyboard_check_released(ord("S"))
-{
-	sprite_index=spr_player;
-}
-else if keyboard_check_released(vk_right) or keyboard_check_released(ord("D"))
-{
-	sprite_index=spr_player_char_standing_right;
-}
-else if keyboard_check_released(vk_left) or keyboard_check_released(ord("A"))
-{
-	sprite_index=spr_player_char_standing_left;
-}
+// se o player tiver o valor de x ou y < 0 ele está correndo, se for > 0 andando, e = 0 parado
