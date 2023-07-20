@@ -36,24 +36,24 @@ move_and_collide(_xinput * my_speed, _yinput * my_speed, obj_wall)
 //trocar sprite do boneco andando
 if keyboard_check(vk_up) or keyboard_check(ord("W"))
 {
-	sprite_index=spr_player_correndo_cima;
+	sprite_index=spr_player_char_walking_up;
 }
 else if keyboard_check(vk_left) or keyboard_check(ord("A"))
 {
-	sprite_index=spr_player_correndo_esquerda;
+	sprite_index=spr_player_char_walking_left;
 }
 else if keyboard_check(vk_right) or keyboard_check(ord("D"))
 {
-	sprite_index=spr_player_correndo_direita;
+	sprite_index=spr_player_char_walking_right;
 }
 else if keyboard_check(vk_down) or keyboard_check(ord("S"))
 {
-	sprite_index=spr_player_correndo_baixo;
+	sprite_index=spr_player_char_walking_down;
 }
 // player parado
 else if keyboard_check_released(vk_up) or keyboard_check_released(ord("W"))
 {
-	sprite_index=spr_player_parado;
+	sprite_index=spr_player_char_standing_up;
 }
 else if keyboard_check_released(vk_down) or keyboard_check_released(ord("S"))
 {
@@ -61,9 +61,9 @@ else if keyboard_check_released(vk_down) or keyboard_check_released(ord("S"))
 }
 else if keyboard_check_released(vk_right) or keyboard_check_released(ord("D"))
 {
-	sprite_index=spr_player_parado_direita;
+	sprite_index=spr_player_char_standing_right;
 }
 else if keyboard_check_released(vk_left) or keyboard_check_released(ord("A"))
 {
-	sprite_index=spr_player_parado_esquerda;
+	sprite_index=spr_player_char_standing_left;
 }
