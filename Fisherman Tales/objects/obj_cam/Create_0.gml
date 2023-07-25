@@ -9,4 +9,4 @@ h_half = camera_get_view_height(cam) / 2;
 // camera se move um pouco atras do jogador
 targetX = xstart;
 targetY = ystart;
-spd = 20;
+spd = 15;
