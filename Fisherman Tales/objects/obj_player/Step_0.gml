@@ -63,3 +63,15 @@ if _xinput != 0 or _yinput != 0 {
 }
 
 // se o player tiver o valor de x ou y < 0 ele está correndo, se for > 0 andando, e = 0 parado
+
+// Verificar se está no menu de pausa
+if (inPause) {
+    // Lógica de pausa aqui, se necessário
+    // Por exemplo, exibir um menu de pausa ou pausar a lógica de jogo
+} else {
+    // Ajustar a ordem de renderização
+    depth = -y; // Isso fará com que o objeto seja renderizado acima dos objetos que estiverem em uma posição y maior (acima na tela)
+}
+
+
+
