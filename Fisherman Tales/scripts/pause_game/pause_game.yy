@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "get_input",
+  "name": "pause_game",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {

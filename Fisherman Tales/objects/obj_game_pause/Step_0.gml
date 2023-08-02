@@ -1,4 +1,4 @@
-script_execute(get_input);
+script_execute(pause_game);
 
 // Step Event 0 do obj_game_pause
 if key_pause {
