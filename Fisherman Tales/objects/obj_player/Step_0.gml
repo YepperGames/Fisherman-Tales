@@ -12,9 +12,9 @@ var _run_button_pressed = keyboard_check(vk_shift) or gamepad_button_check(globa
 
 // liga a variável de correr
 if _run_button_pressed {
-    running = true;
-} else if (keyboard_check_released(vk_shift) or gamepad_button_check_released(global.controle, gp_face1)) {
     running = false;
+} else if (keyboard_check_released(vk_shift) or gamepad_button_check_released(global.controle, gp_face1)) {
+    running = true;
 }
 
 // coloca a velocidade de movimento a velocidade de correr
@@ -33,15 +33,29 @@ move_and_collide(_xinput * my_speed, _yinput * my_speed, obj_wall)
 
 // Trocar sprite do boneco andando ou correndo ou parado
 if _xinput != 0 or _yinput != 0 {
-    // Movendo em alguma direção
-    if _yinput < 0 {
-        sprite_index = running ? spr_player_char_running_up : spr_player_char_walking_up;
-    } else if _yinput > 0 {
-        sprite_index = running ? spr_player_char_running_down : spr_player_char_walking_down;
+    // Prioridade para movimento diagonal
+    if _xinput > 0 {
+        if _yinput > 0 {
+            sprite_index = running ? spr_player_char_running_right : spr_player_char_walking_right;
+        } else if _yinput < 0 {
+            sprite_index = running ? spr_player_char_running_right : spr_player_char_walking_right;
+        } else {
+            sprite_index = running ? spr_player_char_running_right : spr_player_char_walking_right;
+        }
     } else if _xinput < 0 {
-        sprite_index = running ? spr_player_char_running_left : spr_player_char_walking_left;
-    } else if _xinput > 0 {
-        sprite_index = running ? spr_player_char_running_right : spr_player_char_walking_right;
+        if _yinput > 0 {
+            sprite_index = running ? spr_player_char_running_left : spr_player_char_walking_left;
+        } else if _yinput < 0 {
+            sprite_index = running ? spr_player_char_running_left : spr_player_char_walking_left;
+        } else {
+            sprite_index = running ? spr_player_char_running_left : spr_player_char_walking_left;
+        }
+    } else {
+        if _yinput > 0 {
+            sprite_index = running ? spr_player_char_running_down : spr_player_char_walking_down;
+        } else if _yinput < 0 {
+            sprite_index = running ? spr_player_char_running_up : spr_player_char_walking_up;
+        }
     }
 } else {
     // Personagem parado
@@ -62,11 +76,5 @@ if _xinput != 0 or _yinput != 0 {
 
 // se o player tiver o valor de x ou y < 0 ele está correndo, se for > 0 andando, e = 0 parado
 
-// Verificar se está no menu de pausa
-if (inPause) {
-    // Lógica de pausa aqui, se necessário
-    // Por exemplo, exibir um menu de pausa ou pausar a lógica de jogo
-} else {
     // Ajustar a ordem de renderização
-    depth = -y; // Isso fará com que o objeto seja renderizado acima dos objetos que estiverem em uma posição y maior (acima na tela)
-}
+	depth = -y; // Isso fará com que o objeto seja renderizado acima dos objetos que estiverem em uma posição y maior (acima na tela)
