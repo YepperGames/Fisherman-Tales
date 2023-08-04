@@ -113,3 +113,58 @@ if (running) {
         sprite_index = spr_player_char_running_left;
     }
 }
+
+//
+
+// No evento Step do objeto obj_player
+
+// Variável para controlar o estado anterior do botão de clique (mb_left)
+var prev_click_state = false;
+
+// Verificar se o jogador está clicando com o botão esquerdo do mouse
+var click_state = mouse_check_button(mb_left);
+
+// Se o jogador estiver pescando e soltar o botão do mouse, parar a pesca
+if (fishing && !click_state) {
+    fishing = false;
+    fish_meter = 0; // Zerar o medidor de pesca
+    smoke_timer = 0; // Redefinir o timer da fumacinha
+    running = true; // Permitir a movimentação normal
+    // Mudar o sprite do jogador de volta para o sprite de acordo com a direção de movimento
+    if (_xinput != 0 or _yinput != 0) {
+        if (_xinput > 0) {
+            sprite_index = spr_player_char_running_right;
+        } else if (_xinput < 0) {
+            sprite_index = spr_player_char_running_left;
+        }
+    } else {
+        if (_yinput > 0) {
+            sprite_index = spr_player_char_standing_down;
+        } else if (_yinput < 0) {
+            sprite_index = spr_player_char_standing_up;
+        }
+    }
+}
+
+// Se o jogador não estiver pescando e clicar com o botão do mouse, iniciar a pesca
+if (!fishing && click_state && !prev_click_state) {
+    fishing = true;
+    running = false; // Impedir que o jogador corra enquanto estiver pescando
+    // Mudar o sprite do jogador para "spr_player_pescando_frente"
+    sprite_index = spr_player_pescando_frente;
+}
+
+// Atualizar o estado anterior do botão de clique
+prev_click_state = click_state;
+
+// Restante do código do objeto obj_player...
+
+// Se o jogador estiver pescando, atualizar o medidor de pesca
+if (fishing) {
+    fish_meter += fish_meter_direction * fish_speed;
+    // Inverter a direção do medidor quando atingir o valor máximo ou mínimo
+    if (fish_meter >= fish_max_meter || fish_meter <= 0) {
+        fish_meter_direction *= -1;
+    }
+    // A lógica para criar a fumacinha permanece inalterada.
+}
